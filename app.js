@@ -135,15 +135,19 @@ const bubbleSort = function () {
     console.log('ardz' > 'ardi');
 
     // console.log(arrayToSort.sort());
-
-    for (i = 0; i < arrayToSort.length; i++) {
-        if (arrayToSort[i] > arrayToSort[i + 1]) {
-            arrayToSort[i + 1] = arrayToSort[i]
-            arrayToSort[i] = arrayToSort[i + 1]
-            console.log(arrayToSort[i], arrayToSort[i + 1]);
-            break
+    let temp;
+    for (let j = 0; j < arrayToSort.length; j++) {
+        for (let i = 0; i < arrayToSort.length; i++) {
+            if (arrayToSort[i] > arrayToSort[i + 1]) {
+                temp = arrayToSort[i]
+                arrayToSort[i] = arrayToSort[i + 1]
+                arrayToSort[i + 1] = temp;
+                console.log(arrayToSort[i], arrayToSort[i + 1]);
+            }
         }
     }
+
+    console.log(arrayToSort);
 
 
 
